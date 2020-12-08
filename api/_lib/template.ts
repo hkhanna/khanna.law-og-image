@@ -102,6 +102,14 @@ function getCss(theme: string, fontSize: string) {
 
 export function getHtml(parsedReq: ParsedRequest) {
     const { text, theme, md, fontSize, images, widths, heights } = parsedReq;
+    const logos =
+        `<div class="logo-wrapper">
+            ${images.map((img, i) =>
+                getPlusSign(i) + getImage(img, widths[i], heights[i])
+            ).join('')}
+        </div>
+        <div class="spacer">`
+
     return `<!DOCTYPE html>
 <html>
     <meta charset="utf-8">
@@ -113,12 +121,7 @@ export function getHtml(parsedReq: ParsedRequest) {
     <body>
         <div>
             <div class="spacer">
-            <div class="logo-wrapper">
-                ${images.map((img, i) =>
-                    getPlusSign(i) + getImage(img, widths[i], heights[i])
-                ).join('')}
-            </div>
-            <div class="spacer">
+            ${images.length > 0 ? logos : ''}
             <div class="heading">${emojify(
                 md ? marked(text) : sanitizeHtml(text)
             )}
