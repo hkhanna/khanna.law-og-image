@@ -163,6 +163,9 @@ const widthOptions = [
     { text: '250', value: '250' },
     { text: '300', value: '300' },
     { text: '350', value: '350' },
+    { text: '400', value: '400' },
+    { text: '450', value: '450' },
+    { text: '500', value: '500' },
 ];
 
 const heightOptions = [
@@ -174,6 +177,9 @@ const heightOptions = [
     { text: '250', value: '250' },
     { text: '300', value: '300' },
     { text: '350', value: '350' },
+    { text: '400', value: '400' },
+    { text: '450', value: '450' },
+    { text: '500', value: '500' },
 ];
 
 interface AppState extends ParsedRequest {
