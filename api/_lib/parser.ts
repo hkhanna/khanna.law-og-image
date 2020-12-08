@@ -56,7 +56,7 @@ function getDefaultImages(images: string[], theme: Theme): string[] {
         : 'https://assets.vercel.com/image/upload/front/assets/design/vercel-triangle-white.svg';
 
     if (!images || !images[0]) {
-        return [defaultImage];
+        return []; // No default images
     }
     if (!images[0].startsWith('https://assets.vercel.com/') && !images[0].startsWith('https://assets.zeit.co/')) {
         images[0] = defaultImage;
